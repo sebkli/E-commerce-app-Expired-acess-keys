@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import {
   CardActions,
   CardContent,
@@ -7,11 +7,11 @@ import {
   Typography,
   IconButton,
   Button,
-} from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { ShopContext } from "../context/ShopContext";
-import { Link } from "react-router-dom";
-import { buttonStyle, cardContentStyle, cardActionsStyle } from "./style";
+} from '@mui/material';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { ShopContext } from '../context/ShopContext';
+import { Link } from 'react-router-dom';
+import { buttonStyle, cardContentStyle, cardActionsStyle } from './style';
 
 const ProductCard = ({ product }) => {
   const { addItemToCheckout } = useContext(ShopContext);
@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
           {product.title}
         </Typography>
         <Typography variant="h5" component="h5">
-          ${product.variants[0].price}
+          ${product.variants[0].price.amount}
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={cardActionsStyle}>

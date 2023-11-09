@@ -1,15 +1,14 @@
-import React, { useContext } from "react";
-import { Drawer, Typography, Grid, Button } from "@mui/material";
-import { ShopContext } from "../context/ShopContext";
-import CartItem from "./CartItem";
-import { cartFontStyle, drawerStyle, mainButtonStyle } from "./style";
+import React, { useContext } from 'react';
+import { Drawer, Typography, Grid, Button } from '@mui/material';
+import { ShopContext } from '../context/ShopContext';
+import CartItem from './CartItem';
+import { cartFontStyle, drawerStyle, mainButtonStyle } from './style';
 
 const Cart = () => {
-  const { checkout, closeCart, deleteLineItem, isCartOpen } =
-    useContext(ShopContext);
+  const { checkout, closeCart, isCartOpen } = useContext(ShopContext);
 
   return (
-    <>
+    <React.Fragment>
       <Drawer
         anchor="right"
         open={isCartOpen}
@@ -24,7 +23,7 @@ const Cart = () => {
         >
           Your cart
         </Typography>
-        {checkout.lineItems == 0 && (
+        {checkout.lineItems === 0 && (
           <Typography
             variant="h2"
             component="h2"
@@ -58,7 +57,7 @@ const Cart = () => {
           </Typography>
         )}
       </Drawer>
-    </>
+    </React.Fragment>
   );
 };
 

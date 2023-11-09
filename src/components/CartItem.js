@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import {
   CardActions,
   CardContent,
@@ -6,16 +6,15 @@ import {
   Card,
   Typography,
   IconButton,
-  Box,
-} from "@mui/material";
+} from '@mui/material';
 import {
   itemImageStyle,
   itemActionsStyle,
   itemContentStyle,
   itemNameStyle,
-} from "./style";
-import { ShopContext } from "../context/ShopContext";
-import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
+} from './style';
+import { ShopContext } from '../context/ShopContext';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 const CartItem = ({ item }) => {
   const { deleteLineItem } = useContext(ShopContext);
@@ -33,12 +32,12 @@ const CartItem = ({ item }) => {
           Quantity {item.quantity}
         </Typography>
         <Typography variant="h4" component="h5">
-          ${item.variant.price}
+          ${item.variant.price.amount}
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={itemActionsStyle}>
         <IconButton onClick={() => deleteLineItem(item.id)}>
-          <RemoveShoppingCartIcon sx={{ fontSize: "3.5rem" }} color="warning" />
+          <RemoveShoppingCartIcon sx={{ fontSize: '3.5rem' }} color="warning" />
         </IconButton>
       </CardActions>
     </Card>

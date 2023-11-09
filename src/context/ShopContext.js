@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Client from "shopify-buy";
+import React, { Component } from 'react';
+import Client from 'shopify-buy';
 
 const ShopContext = React.createContext();
 
@@ -7,8 +7,6 @@ const client = Client.buildClient({
   domain: process.env.REACT_APP_SHOPIFY_DOMAIN,
   storefrontAccessToken: process.env.REACT_APP_SHOPIFY_KEY,
 });
-
-const checkout_ID = localStorage.checkout_ID;
 
 class ShopProvider extends Component {
   state = {
@@ -28,7 +26,7 @@ class ShopProvider extends Component {
 
   createCheckout = async () => {
     const checkout = await client.checkout.create();
-    localStorage.setItem("checkout_ID", checkout.id);
+    localStorage.setItem('checkout_ID', checkout.id);
     this.setState({ checkout: checkout });
   };
 

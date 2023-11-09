@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from "react";
-import { ShopContext } from "../context/ShopContext";
-import { useParams } from "react-router-dom";
-import { Grid, Typography, Button, Box } from "@mui/material";
-import { mainButtonStyle, productInfoStyle, priceStyle } from "./style";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import React, { useContext, useEffect } from 'react';
+import { ShopContext } from '../context/ShopContext';
+import { useParams } from 'react-router-dom';
+import { Grid, Typography, Button } from '@mui/material';
+import { mainButtonStyle, productInfoStyle, priceStyle } from './style';
 
 const ProductPage = () => {
   const { handle } = useParams();
@@ -27,11 +26,11 @@ const ProductPage = () => {
   return (
     <>
       <Grid container justifyContent="center" spacing={2}>
-        <Grid item item xs={12} md={5}>
+        <Grid item xs={12} md={5}>
           <img
             src={product.images[0].src}
-            className="ds"
-            className="mainImage"
+            className="mainImage ds"
+            alt="Product"
           />
         </Grid>
         <Grid item xs={12} md={7}>
@@ -43,7 +42,7 @@ const ProductPage = () => {
               {product.description}
             </Typography>
             <Typography variant="h1" fontSize={70} sx={priceStyle}>
-              $ {product.variants[0].price}
+              $ {product.variants[0].price.amount}
             </Typography>
             <Button
               sx={mainButtonStyle}

@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
-import { ShopContext } from "../context/ShopContext";
-import { Grid, Typography } from "@mui/material";
-import ProductCard from "./ProductCard";
+import React, { useContext, useEffect } from 'react';
+import { ShopContext } from '../context/ShopContext';
+import { Grid, Typography } from '@mui/material';
+import ProductCard from './ProductCard';
 
 const ProductsList = () => {
   const { fetchAllProducts, productsList } = useContext(ShopContext);
@@ -9,7 +9,7 @@ const ProductsList = () => {
     fetchAllProducts();
   }, [fetchAllProducts]);
 
-  if (productsList.length == 0) {
+  if (productsList.length === 0) {
     return (
       <div>
         <Typography variant="h2" component="h2">
